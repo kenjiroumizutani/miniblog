@@ -1,0 +1,17 @@
+<body>
+  新規投稿
+  form_tagで作った
+  <%= form_tag(tweets_path, method: :post,class: "tweetnew") do %>
+  <%= label_tag :つぶやき %><br>
+  <%= text_area_tag :text %><br>
+  <%= submit_tag "追加" %><br>
+  <% end %>
+  
+  form_forで作った
+  <%= form_for(@tweet) do |f| %>
+  <%= f.label :つぶやき %><br>
+  <%= f.text_area :text %><br>
+  <%= f.submit "追加" %><br>
+  <% end %>
+</body>
+

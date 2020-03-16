@@ -1,0 +1,35 @@
+<head>
+  
+</head>
+
+<body>
+  <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6"><a href="/">MiniBlog</a></h1>
+        <% if user_signed_in? %>  
+          <div class="user_nav grid-6">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <%= link_to "新規投稿", new_tweet_path %>
+            <!--<a class="post" href="/tweets/new">投稿する</a>-->
+            <!--テキストでは上記の書き方をしていたがlink_toを使わない理由はあるのかな？なんでpostなんだ？newはgetだよね？-->
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          </div>
+        <% end %>
+      </div>
+  </header>
+
+  
+  <% @tweet.each do |tweet|  %>
+   <%= simple_format(tweet.text) %>
+   <%= tweet.user.name %>
+   <%= link_to "詳細", "/tweets/#{tweet.id}", method: :get %>
+   <%= link_to "編集", "/tweets/#{tweet.id}/edit", method: :get %>
+   <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete %>
+  <%end%>
+    
+</body>
+
