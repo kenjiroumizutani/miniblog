@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
   end
   
   def create
-    Tweet.create(text: create_params[:text], user_id: current_user.id)
+    Tweet.create(title: create_params[:title],text: create_params[:text], user_id: current_user.id)
       redirect_to :root and return
   end
   
@@ -20,15 +20,22 @@ class TweetsController < ApplicationController
   end
   
   def update
-    
+    @tweet = Tweet.find(params[:id])
+    @tweet.update(update_params)
+  end
+  
+  def destroy
+    tweet = Tweet.find(params[:id])
+    tweet.destroy if tweet.user_id == current_user.id
+    redirect_to :root and return
   end
   
   private
   def create_params
-    params.permit(:text)
+    params.permit(:title,:text)
   end
   
   def update_params
-    params.permit(:text)
+    params.permit(:title,:text)
   end
 end
