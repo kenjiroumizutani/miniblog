@@ -1,10 +1,11 @@
-<div class="msr_box02">
-  <a href="#">
-    <img src="/../images/flat_white_box01.png" width="230" height="150" alt="img"/>
-    <h3 class="ttl"><%= @tweet.title %></h3>
+  
+  <div class="user_show">
+   <h4><%= @tweet.user.name %></h4>
+   <%= @tweet.title %>
+   <div class="content_left">
     <%= simple_format(@tweet.text) %>
-    <%= @tweet.user.name %>
-  </a>
-</div>
+   </div>
+  </div>
 
-  <%= link_to "戻る", "/", method: :get %>
+
+  <%= link_to "ホームに戻る", "/", method: :get , class: "button_1" %>

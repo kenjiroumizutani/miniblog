@@ -1,5 +1,10 @@
 
-  <%= @user.name %><br>
-  <div class="image" style="background-image: url(<%= rails_blob_path(@user.image) %>) "></div>
+  <div class="user_show"><%= @user.name %><br>
+    <div class="image" style="background-image: url(<%= rails_blob_path(@user.image) %>) "></div>
+    ブログ一覧<br>
+     <% @tweets.each do |tweet| %>
+      <%= link_to tweet.title, "/tweets/#{tweet.id}", method: :get, class: "" %><br>
+    <% end %>
   
-  <%= link_to "戻る", "/", method: :get %>
+  </div>
+  <%= link_to "ホームに戻る", "/", method: :get , class: "button_1" %>

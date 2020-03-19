@@ -16,12 +16,12 @@ class TweetsController < ApplicationController
   end
   
   def edit
-    @tweet = Tweet.find(params[:id])
+     @tweet = Tweet.find(params[:id])
   end
   
   def update
-    @tweet = Tweet.find(params[:id])
-    @tweet.update(update_params)
+    tweet = Tweet.find(params[:id])
+    tweet.update(update_params) if tweet.user_id == current_user.id
   end
   
   def destroy
@@ -32,10 +32,10 @@ class TweetsController < ApplicationController
   
   private
   def create_params
-    params.permit(:title,:text)
+    params.require(:tweet).permit(:title,:text)
   end
   
   def update_params
-    params.permit(:title,:text)
+    params.require(:tweet).permit(:title,:text)
   end
 end

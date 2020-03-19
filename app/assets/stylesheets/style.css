@@ -25,6 +25,10 @@ h1 {
   padding: 0.5em;/*文字まわり（上下左右）の余白*/
 }
 
+.header {
+  margin-bottom: 20px;
+}
+
 .btn-square-pop {
   position: relative;
   display: inline-block;
@@ -59,49 +63,49 @@ h1 {
   transform: translateY(2px);
 }
 
-.msr_box02 {
-  background-color: #1B73BA;
-  width: 230px;
-}
-.msr_box02 a{
-  box-sizing: border-box;
-  display:block;
+
+.button_1 {
   position: relative;
-  transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  -webkit-transition: 0.2s ease-in-out;
-}
-.msr_box02 p {
-  color: #FFFFFF;
-  font-size: 13px;
-  line-height: 1.6;
-  padding: 0 20px 8px 8px;
-}
-.msr_box02 .ttl {
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.6;
-  padding: 8px 20px 4px 8px;
-}
-.msr_box02 a:after {
-  background-image: url(/stylerecipe_img/flat_white_box01.png);
-  background-repeat: no-repeat;
-  bottom: 5px;
-  content: " ";
   display: inline-block;
-  *display:inline;
-  *zoom:1;
-  height: 20px;
-  position: absolute;
-  right: 5px;
-  width: 20px;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #03A9F4;/*色*/
+  border: solid 1px #0f9ada;/*線色*/
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
 }
-.msr_box02 a:hover{
-  opacity: 0.8;
+
+.button_1:active {
+  /*押したとき*/
+  border: solid 1px #03A9F4;
+  box-shadow: none;
+  text-shadow: none;
 }
 
 .title {
   font-size: 2.0rem;
 }
+
+.image {
+  background-position: center center;
+  background-size: cover;
+  min-height: 200px;
+  height: 100%;
+  width: 200px;
+  max-width: 500px;
+  margin: 0 auto;
+    
+  }
+  
+.user_show {
+  font-size: 2.0rem;
+  
+}
+
+.user_show > .content_left {
+    
+    margin: 10px 70px;
+    text-align: left;
+   }

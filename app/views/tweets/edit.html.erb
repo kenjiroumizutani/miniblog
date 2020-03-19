@@ -1,6 +1,10 @@
 
-  <%= simple_format(@tweet.text) %>
-  <%= @tweet.user.name %>
+  <%= form_for(@tweet) do |f| %>
+      <h3><%= @tweet.title %></h3>
+        <%= @tweet.user.name %><br>
+           <%= f.text_area :text,  cols:"100", rows:"10", autofocus:"true" %><br>
+           <!--newのareaの書き方のほうが簡単かな？-->
+        <%= f.submit "編集する", class:"button_1"%>
+  <% end %>
    
-   
-  <%= link_to "戻る", "/", method: :get %>
+  <%= link_to "ホームに戻る", "/", method: :get , class: "button_1" %>

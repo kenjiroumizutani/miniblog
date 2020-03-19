@@ -1,9 +1,9 @@
-<h2>プロフィール画像</h2>
  <%= form_for current_user do |f| %>
-      <div class="form-group file">
-        <%= f.file_field :image, class: "", placeholder: "画像アップロード" %>
-      </div>
-      <%= f.submit "送信", class: "" %>
+      <%= label_tag :名前 %><br>
+      <%= f.text_area :name ,size: "30x2", autofocus:"true"%><br>
+      <%= label_tag :マイページ画像 %><br>
+      <%= f.file_field :image, class: "", placeholder: "画像アップロード" %><br>
+      <%= f.submit "送信", class: "button_1" %>
   <% end %>
   
-  <%= link_to "戻る", "/", method: :get %>
+  <%= link_to "ホームに戻る", "/", method: :get , class: "button_1"%>

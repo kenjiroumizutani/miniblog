@@ -1,22 +1,12 @@
 <body>
   新規投稿<br>
-  form_tagで作った
-  <%= form_tag(tweets_path, method: :post,class: "tweetnew") do %>
-  <%= label_tag :題名 %><br>
-  <%= text_area_tag :title %><br>
-  <%= label_tag :ブログ %><br>
-  <%= text_area_tag :text %><br>
-  <%= submit_tag "追加" %><br>
-  <% end %>
-  
-  form_forで作った
   <%= form_for(@tweet) do |f| %>
   <%= label_tag :題名 %><br>
-  <%= text_area_tag :title %><br>
+  <%= f.text_area :title ,size: "30x2", autofocus:"true"%><br>
   <%= label_tag :ブログ %><br>
-  <%= f.text_area :text %><br>
-  <%= f.submit "追加" %><br>
+  <%= f.text_area :text ,size: "100x10", autofocus:"true"%><br>
+  <%= f.submit "追加", class: "button_1" %><br>
   <% end %>
 </body>
 
-<%= link_to "戻る", "/", method: :get %>
+<%= link_to "ホームに戻る", "/", method: :get, class: "button_1" %>
