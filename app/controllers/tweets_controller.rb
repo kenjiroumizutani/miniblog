@@ -1,9 +1,14 @@
 class TweetsController < ApplicationController
   def index
+    @tweet = Tweet.find(params[:id])
+    @comments = @tweet.comments
+    @comment = Comment.new
   end
   
   def show
     @tweet = Tweet.find(params[:id])
+    @comments = @tweet.comments
+    @comment = Comment.new
   end
   
   def new
@@ -32,7 +37,7 @@ class TweetsController < ApplicationController
   
   private
   def create_params
-    params.require(:tweet).permit(:title,:text)
+    params.require(:tweet).permit(:title,:text).merge(user_id: current_user.id)
   end
   
   def update_params
