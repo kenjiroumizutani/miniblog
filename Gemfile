@@ -65,3 +65,6 @@ gem 'devise'
 # Use ActiveStorage variant
 gem 'mini_magick'
 gem 'pry-rails'
+group :production do
+  gem 'rails_12factor'
+end
