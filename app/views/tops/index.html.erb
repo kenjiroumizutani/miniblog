@@ -7,12 +7,12 @@
   <% @tweet.each do |tweet|  %>
    <br>
    タイトル
-   <%= link_to tweet.title, "/tweets/#{tweet.id}", method: :get, class: "title" %><br>
-   著者：
-   <%= tweet.user.name %><br>
-   <%= link_to "詳細", "/tweets/#{tweet.id}", method: :get, class: "btn-square-pop" %>
+   <%= link_to tweet.title, "/tweets/#{tweet.id}", method: :get, class: "title" %>
    <%= link_to "編集", "/tweets/#{tweet.id}/edit", method: :get, class: "btn-square-pop" %>
    <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete, class: "btn-square-pop" %><br>
+   著者：
+   <%= tweet.user.name %><br>
+
    <br>
   <%end%>
     
