@@ -109,3 +109,12 @@ h1 {
     margin: 10px 70px;
     text-align: left;
    }
+   
+.user_show > .content_left >.comment {
+  color: #000000;
+}
+
+.comment_bun > p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}

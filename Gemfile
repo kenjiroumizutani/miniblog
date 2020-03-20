@@ -64,3 +64,4 @@ gem 'devise'
 
 # Use ActiveStorage variant
 gem 'mini_magick'
+gem 'pry-rails'

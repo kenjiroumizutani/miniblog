@@ -1,0 +1,8 @@
+
+  <h4><%= @tweet.user.name %></h4>
+   <%= @tweet.title %>
+  <h3>コメントする</h3>
+  <%= form_for(@comment) do |f| %>
+      <%= f.text_area :comment, placeholder: "ここにコメントを入力してください。" %><br>
+      <%= f.submit "コメントを投稿する" %><br>
+  <% end %>

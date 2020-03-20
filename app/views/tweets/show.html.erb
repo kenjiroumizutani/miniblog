@@ -4,16 +4,13 @@
    <%= @tweet.title %>
    <div class="content_left">
     <%= simple_format(@tweet.text) %>
-     <h3>コメント</h3>
+     <div class = "comment">
       <%= render partial: "tweets/comment", collection: @comments %>
+     </div>
    </div>
+   <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
+        <textarea name="comment" placeholder="コメントする" rows="3" cols="100"></textarea><br>
+        <input type="submit" value="SENT"><br>
+      <% end %>
   </div>
-  
-  <h3>コメントする</h3>
-  <%= form_for(@comment) do |f| %>
-      <%= f.text_area :comment, placeholder: "ここにコメントを入力してください。" %><br>
-      <%= f.submit "コメントを投稿する" %><br>
-  <% end %>
-
-
   <%= link_to "ホームに戻る", "/", method: :get , class: "button_1" %>
