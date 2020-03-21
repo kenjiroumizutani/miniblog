@@ -1,20 +1,21 @@
-<head>
-  
-</head>
-
 <body>
-
-  <% @tweet.each do |tweet|  %>
-   <br>
-   タイトル
-   <%= link_to tweet.title, "/tweets/#{tweet.id}", method: :get, class: "title" %>
-   <%= link_to "編集", "/tweets/#{tweet.id}/edit", method: :get, class: "btn-square-pop" %>
-   <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete, class: "btn-square-pop" %><br>
-   著者：
-   <%= tweet.user.name %><br>
-
-   <br>
-  <%end%>
+ <div class="info">
+  　採用担当者様へ<br>
+    このアプリは<span>rails on line</span>を利用して作った三択クイズアプリです。<br>
+    <span>ログイン機能付きのブログ</span>アプリです。<br>
+    コメント機能や画像アップロード機能も搭載しています。<br>
+    DBは<span>mysql</span>を利用しています。<br>
+    開発環境は以下の通りです。<br>
+      開発環境：AWS Cloud9,phpMyAdmin,github,heroku,<br>
+                <br>
+    ポートフォリオと呼べるレベルではございませんが、現在の自分の理解力を示す指標として<br>
+    挙げさせて頂きます。<br>
+    
+    最後になりますが、限りある時間の中このアプリに目を通して頂きありがとうございました。<br>
+   </div>
+   
+   <%=link_to "トップに戻る", "/", method: :get , class: "tophe" %>
+ </body>
     
 </body>
 

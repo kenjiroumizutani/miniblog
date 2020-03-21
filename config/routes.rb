@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-   root 'tops#index'
+   root 'tweets#index'
    resources :tops 
    resources :tweets do
     resources :comments, only: [:create]

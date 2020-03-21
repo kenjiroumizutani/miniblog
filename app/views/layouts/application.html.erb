@@ -19,7 +19,7 @@
             <!--<a class="post" href="/tweets/new">投稿する</a>-->
             <!--テキストでは上記の書き方をしていたがlink_toを使わない理由はあるのかな？なんでpostなんだ？newはgetだよね？-->
             <%= link_to "マイページ", user_path(current_user), class: "btn-sticky" %>
-            <%= link_to "user編集", edit_user_path(current_user), class: "btn-sticky" %>
+            <%= link_to "プロフィール編集", edit_user_path(current_user), class: "btn-sticky" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "btn-sticky"%>
           </div>
         <% else %>

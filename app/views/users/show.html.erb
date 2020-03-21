@@ -1,10 +1,15 @@
 
   <div class="user_show"><%= @user.name %><br>
     <div class="image" style="background-image: url(<%= rails_blob_path(@user.image) %>) "></div>
-    ブログ一覧<br>
+    ブログ一覧<br></div>
      <% @tweets.each do |tweet| %>
-      <%= link_to tweet.title, "/tweets/#{tweet.id}", method: :get, class: "" %><br>
+      <%= link_to tweet.title, "/tweets/#{tweet.id}", method: :get, class: "" %>
+         <% if user_signed_in? && current_user.id == tweet.user_id %>
+            <%= link_to "編集", "/tweets/#{tweet.id}/edit", method: :get, class: "btn-square-pop" %>
+            <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete, class: "btn-square-pop" %>
+         <% end %>
+      <br>
     <% end %>
   
-  </div>
+  
   <%= link_to "ホームに戻る", "/", method: :get , class: "button_1" %>

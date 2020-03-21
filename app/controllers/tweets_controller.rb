@@ -1,5 +1,9 @@
 class TweetsController < ApplicationController
 
+  def index
+    @tweet = Tweet.includes(:user).all.order("created_at DESC")
+  end
+
   def show
     @tweet = Tweet.find(params[:id])
     @comments = @tweet.comments

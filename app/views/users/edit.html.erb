@@ -1,9 +1,9 @@
  <%= form_for current_user do |f| %>
-      <%= label_tag :名前 %><br>
+      <%= label_tag :名前の変更 %><br>
       <%= f.text_area :name ,size: "30x2", autofocus:"true"%><br>
-      <%= label_tag :マイページ画像 %><br>
+      <%= label_tag :マイページ画像の変更 %><br>
       <%= f.file_field :image, class: "", placeholder: "画像アップロード" %><br>
-      <%= f.submit "送信", class: "button_1" %>
+      <%= f.submit "変更する", class: "button_1" %>
   <% end %>
   
   <%= link_to "ホームに戻る", "/", method: :get , class: "button_1"%>

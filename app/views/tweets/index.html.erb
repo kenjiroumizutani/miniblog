@@ -1,0 +1,16 @@
+<body>
+  <%= link_to "採用担当者様へ" ,"/tops", class: "top_info" %><br>
+  <% @tweet.each do |tweet|  %>
+   タイトル
+   <%= link_to tweet.title, "/tweets/#{tweet.id}", method: :get, class: "title" %>
+   <% if user_signed_in? && current_user.id == tweet.user_id %>
+     <%= link_to "編集", "/tweets/#{tweet.id}/edit", method: :get, class: "btn-square-pop" %>
+   <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete, class: "btn-square-pop" %>
+   <% end %>
+   <br>
+   著者：
+   <%= tweet.user.name %><br>
+   <br>
+  <%end%>
+    
+</body>
