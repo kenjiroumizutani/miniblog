@@ -10,8 +10,8 @@
    </div>
    <% if user_signed_in? %>
      <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
-        <textarea name="comment" placeholder="コメントする" rows="3" cols="100"></textarea><br>
-        <input type="submit" value="SENT"><br>
+        <textarea name="comment" placeholder="コメントする" rows="5" cols="100"></textarea><br>
+        <input type="submit" value="コメント投稿"><br>
       <% end %>
     </div>
     <% end %>
